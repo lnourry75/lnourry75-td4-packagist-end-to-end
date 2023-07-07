@@ -21,4 +21,18 @@ jobs:
 
       
       name: "Install dependencies"
-        run: npm install
+      run: npm install
+
+      
+      name: "Run tests"
+      run: npm run test
+
+      
+      name: "Run eslint"
+      run: npx eslint index.js
+
+      
+name: "Publish to NPM"
+      uses: JS-DevTools/npm-publish@v2
+      with:
+        token: $({ secrets.NPM_TOKEN })
