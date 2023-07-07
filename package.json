@@ -1,0 +1,19 @@
+{
+  "name": "lnourry75-td4",
+  "version": "1.0.0",
+  "description": "Anothr beautiful package on dd best-language ever",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lnourry75/lnourry75-td4-packagist-end-to-end.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lnourry75/lnourry75-td4-packagist-end-to-end/issues"
+  },
+  "homepage": "https://github.com/lnourry75/lnourry75-td4-packagist-end-to-end#readme"
+}
