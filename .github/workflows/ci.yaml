@@ -1,7 +1,9 @@
-name: Continuous integration
+name: Continious Integration
 
 on:
   push:
+  pull_request:
+
 
 jobs:
   ci:
@@ -9,30 +11,24 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      
-      name: "Init repo"
-      uses: actions/checkout@v3
+      - name: "Init repository"
+        uses: actions/checkout@v3
 
-      
-      name: "Init node"
-      uses: actions/setup-node@v3
-      with:
-        node-versions: '19'
+      - name: "Install node"
+        uses: actions/setup-node@v3
+        with:
+          node-version: "19"
 
-      
-      name: "Install dependencies"
-      run: npm install
+      - name: "Install dependencies"
+        run: npm install
 
-      
-      name: "Run tests"
-      run: npm run test
+      - name: "Run tests"
+        run: npm run test
 
-      
-      name: "Run eslint"
-      run: npx eslint index.js
+      - name: "Run eslint"
+        run: npx eslint index.js
 
-      
-name: "Publish to NPM"
-      uses: JS-DevTools/npm-publish@v2
-      with:
-        token: $({ secrets.NPM_TOKEN })
+      - name: "Publish to NPM"
+        uses: JS-DevTools/npm-publish@v2
+        with:
+          token: ${{ secrets.NPM_TOKEN }}
